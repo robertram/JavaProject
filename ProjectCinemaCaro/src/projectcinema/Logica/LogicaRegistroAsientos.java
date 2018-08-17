@@ -72,7 +72,7 @@ for(int i=0; i<7; i++){
         btButaca1[i][j].setToolTipText("N."+cont);
         btButaca1[i][j].setText((cont < 10 ? "0" : "") + cont++);
 }}
-cont = 21;
+cont = 20;
 for(int i=0; i<7; i++){
     for(int j=0; j<3; j++){
         cont++;
@@ -235,7 +235,7 @@ txf3.setBackground(Color.white);
 txf4.setBackground(Color.white);
 txf5.setBackground(Color.white);
 
-// txf1.setText(usuarios);
+//txf1.setText(usuarios);
 txf3.setText(""+i);
 txf4.setText(""+j);
 txf5.setText(asiento);
