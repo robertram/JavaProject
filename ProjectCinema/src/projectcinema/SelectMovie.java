@@ -118,7 +118,7 @@ public class SelectMovie extends javax.swing.JFrame {
                 ckbVIPActionPerformed(evt);
             }
         });
-        getContentPane().add(ckbVIP, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 570, 50, -1));
+        getContentPane().add(ckbVIP, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 570, 70, -1));
 
         ckb3D.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 14)); // NOI18N
         ckb3D.setForeground(new java.awt.Color(255, 255, 255));
@@ -247,12 +247,14 @@ public class SelectMovie extends javax.swing.JFrame {
         LogicaCinema logica = new LogicaCinema();
         String roomType = logica.trdD();
         lblRoomType.setText(roomType);
+        String lblMovieType= "3D";
     }//GEN-LAST:event_ckb3DActionPerformed
 
     private void ckb2DActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ckb2DActionPerformed
         LogicaCinema logica = new LogicaCinema();
         String roomType = logica.sndD();
         lblRoomType.setText(roomType);
+        String lblMovieType= "2D";
     }//GEN-LAST:event_ckb2DActionPerformed
 
     /**

@@ -28,7 +28,7 @@ public class LogicaLogin {
         
         //String username="Bob69";
         //String password="123";
-        String filepath="/Users/robertramirez/Documents/Ulacit/2cuatrimestre/Fundamentos/Proyecto\\Final/JavaProject/ProjectCinema/Users.txt";
+        String filepath="/Users/robertramirez/Desktop/Users.txt";
         
         VerifyLogin(username, password, filepath);
         
@@ -79,8 +79,9 @@ public class LogicaLogin {
             
             
         }catch(Exception e){
-            //JOptionPane.showMessageDialog(null, "No se encuentra en archivo", "Error!", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "No se encuentra en archivo", "Error!", JOptionPane.ERROR_MESSAGE);
             System.out.println("Error");
+            System.out.println("No se encontro el archivo");
         }
     
     }

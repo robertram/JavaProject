@@ -159,9 +159,10 @@ public class Change extends javax.swing.JFrame {
         
         TicketsMenu2 total = new TicketsMenu2();
         
-        /*
-        change = obj.Cambio(this.txtMoney.getText(), this.lblTotalPay.getText());
         
+        //change = obj.Cambio(this.txtMoney.getText(), total.lblTotalPay.getText());
+        
+        /*
         if(TotalToPay > MoneyPayed){
         }
         else if(TotalToPay<MoneyPayed){

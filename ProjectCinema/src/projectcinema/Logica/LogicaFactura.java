@@ -45,7 +45,7 @@ public class LogicaFactura {
         
         int MoneyPayed = Integer.parseInt(MoneyPayed1);
         int TotalToPay = Integer.parseInt(TotalToPay1);
-        
+
         
         int Change= TotalToPay-MoneyPayed;
         
@@ -56,5 +56,7 @@ public class LogicaFactura {
         };
         
     }
+    
+    
     
 }

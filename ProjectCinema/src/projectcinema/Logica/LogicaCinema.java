@@ -5,6 +5,7 @@ import Data.Data;
 import javax.swing.ImageIcon;
 import Data.DataSelectMovie;
 import Data.DataRoomType;
+import projectcinema.TicketsMenu2;
 
 
 public class LogicaCinema {
@@ -41,6 +42,7 @@ public class LogicaCinema {
     
     DataRoomType room = new DataRoomType();
     public String sndD (){
+        
         return room.sndD();
     }
     public String trdD (){
