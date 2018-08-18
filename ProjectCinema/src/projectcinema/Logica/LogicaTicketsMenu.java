@@ -19,21 +19,27 @@ public class LogicaTicketsMenu {
     String txtAdults;
     String txtSeniors;
     String lblMovieType;
+    String txtMoney;
     
-    public int[] Prices(String numkids, String numadults, String numseniors, String movieType){
+    public int[] Prices(String numkids, String numadults, String numseniors, String Money, String movieType){
         
         this.txtKids = numkids;
         this.txtAdults = numadults;
         this.txtSeniors = numseniors;
         this.lblMovieType= movieType;
         
+        this.txtMoney= Money;
+        
         int kids = Integer.parseInt(numkids);
         int adults = Integer.parseInt(numadults);
         int seniors = Integer.parseInt(numseniors);
         
+        int money = Integer.parseInt(Money);
+        
         int kidsPrice = 0;
         int adultsPrice = 0;
         int seniorsPrice = 0;
+        int inputMoney=0;
         
         if (movieType.compareTo("2D") == 0) {
             kidsPrice = kids*1200;
@@ -49,11 +55,18 @@ public class LogicaTicketsMenu {
             seniorsPrice = seniors*4700;
         }
         
+        int total= kidsPrice+adultsPrice+seniorsPrice;
+        int cambio= inputMoney-total;
+        
+        
+        
+        
         return new int[] {
             kidsPrice,
             adultsPrice,
             seniorsPrice,
-            kidsPrice + adultsPrice + seniorsPrice
+            kidsPrice + adultsPrice + seniorsPrice,
+            cambio
         };
     }
     
