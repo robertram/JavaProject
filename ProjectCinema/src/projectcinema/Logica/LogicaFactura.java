@@ -5,6 +5,7 @@
  */
 package projectcinema.Logica;
 
+import javax.swing.JOptionPane;
 import projectcinema.Bill;
 import projectcinema.Change;
 import projectcinema.Login;
@@ -22,6 +23,7 @@ public class LogicaFactura {
     
     private String txtMoney;
     private String lblTotalPay;
+    
     
     public void EndTicketsMenu(TicketsMenu2 menu, int[] totales){
         Bill fact = new Bill(totales);
@@ -49,6 +51,15 @@ public class LogicaFactura {
         
         int Change= TotalToPay-MoneyPayed;
         
+        
+        if(TotalToPay > MoneyPayed){
+        }
+        else if(TotalToPay<MoneyPayed){
+            
+            
+            //JOptionPane.showMessageDialog(obj, "No cuentas con suficiente dinero", "Cobro...", JOptionPane.WARNING_MESSAGE);
+            
+        }
         
         return new int[] {
             Change
