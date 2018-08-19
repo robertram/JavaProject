@@ -325,6 +325,8 @@ public class TicketsMenu2 extends javax.swing.JFrame {
         
         totales = obj.Prices(this.txtKids.getText(), this.txtAdults.getText(), this.txtSeniors.getText(), this.lblMovieType.getText());
         
+        
+        
         lblKidsPrice.setText("" + totales[0]);
         lblAdultsPrice.setText("" + totales[1]);
         lblSeniorsPrice.setText("" + totales [2]);

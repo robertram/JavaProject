@@ -7,7 +7,7 @@ import java.io.IOException;
 
 public class DataRoomType {
     public String sndD(){
-        File file = new File("C:\\Users\\Sofi\\Documents\\NetBeansProjects\\ProjectCinema\\Data\\RoomType\\2D.txt");
+        File file = new File("C:\\Users\\Sofi\\Documents\\GitHub\\JavaProject\\ProjectCinemaCaro\\Data\\RoomType\\2D.txt");
         FileReader fileR = null;
         BufferedReader file2 = null;
 
@@ -31,7 +31,7 @@ public class DataRoomType {
         return "";
     }
     public String trdD(){
-        File file = new File("C:\\Users\\Sofi\\Documents\\NetBeansProjects\\ProjectCinema\\Data\\RoomType\\3D.txt");
+        File file = new File("C:\\Users\\Sofi\\Documents\\GitHub\\JavaProject\\ProjectCinemaCaro\\Data\\RoomType\\3D.txt");
         FileReader fileR = null;
         BufferedReader file2 = null;
 
@@ -55,7 +55,7 @@ public class DataRoomType {
         return "";
     }
     public String vip(){
-        File file = new File("C:\\Users\\Sofi\\Documents\\NetBeansProjects\\ProjectCinema\\Data\\RoomType\\VIP.txt");
+        File file = new File("C:\\Users\\Sofi\\Documents\\GitHub\\JavaProject\\ProjectCinemaCaro\\Data\\RoomType\\VIP.txt");
         FileReader fileR = null;
         BufferedReader file2 = null;
 

@@ -9,7 +9,7 @@ import java.io.IOException;
 
 public class Data {
     public String spiderman(){
-        File file = new File("C:\\Users\\Sofi\\Documents\\NetBeansProjects\\ProjectCinema\\Data\\SpiderMan.txt");
+        File file = new File("C:\\Users\\Sofi\\Documents\\GitHub\\JavaProject\\ProjectCinemaCaro\\Data\\SpiderMan.txt");
         FileReader fileR = null;
         BufferedReader file2 = null;
 
@@ -33,7 +33,7 @@ public class Data {
         return "";
     }
     public String IronMan(){
-        File file = new File("C:\\Users\\Sofi\\Documents\\NetBeansProjects\\ProjectCinema\\Data\\IronMan.txt");
+        File file = new File("C:\\Users\\Sofi\\Documents\\GitHub\\JavaProject\\ProjectCinemaCaro\\Data\\IronMan.txt");
         FileReader fileR = null;
         BufferedReader file2 = null;
 
@@ -57,7 +57,7 @@ public class Data {
         return "";
     }   
     public String Batman(){
-        File file = new File("C:\\Users\\Sofi\\Documents\\NetBeansProjects\\ProjectCinema\\Data\\Batman.txt");
+        File file = new File("C:\\Users\\Sofi\\Documents\\GitHub\\JavaProject\\ProjectCinemaCaro\\Data\\Batman.txt");
         FileReader fileR = null;
         BufferedReader file2 = null;
 

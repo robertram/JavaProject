@@ -26,9 +26,7 @@ public class LogicaLogin {
         this.txtUsuario = username;
         this.pswPass = password;
         
-        //String username="Bob69";
-        //String password="123";
-        String filepath="C:\\Users\\Sofi\\Documents\\NetBeansProjects\\ProjectCinema\\Users.txt";
+        String filepath="C:\\Users\\Sofi\\Documents\\GitHub\\JavaProject\\ProjectCinemaCaro\\Users.txt";
         
         VerifyLogin(username, password, filepath);
         
@@ -89,7 +87,7 @@ public class LogicaLogin {
     private String txtUsuario;
     private String pswPass;
     
-    private final String User1 = "sofia";
+    /*private final String User1 = "sofia";
     private final String Pass1 = "sofia";
     private final String User2 = "carolina";
     private final String Pass2 = "carolina";
@@ -116,6 +114,6 @@ public class LogicaLogin {
             JOptionPane.showMessageDialog(log, "°Usuario o Contraseña incorrecto!", "Incorrecto", JOptionPane.ERROR_MESSAGE);
         }
     
-    }
+    }*/
     
 }
