@@ -18,12 +18,12 @@ private JButton [][] btButaca1;
 private JButton [][] btButaca2;
 
 private JDialog dialg;
-private JButton bt1,bt2,bt3,bt4;
-private JTextField txf1,txf3,txf4,txf5;
-private JLabel jl1,jl3,jl4,jl5;
+private JButton bt2,bt3,bt4;
+private JTextField txf3,txf4,txf5;
+private JLabel jl3,jl4,jl5;
 
-private JTextField txf6,txf7,txf9,txf10,txf12;
-private JLabel jl6,jl8,jl9,jl10,jl12;
+private JTextField txf6,txf7;
+private JLabel jl6,jl8;
 
 public LogicaRegistroAsientos(){
 super("Reserva de Butacas");
@@ -69,14 +69,14 @@ cont = 0;
 for(int i=0; i<7; i++){
     for(int j=0; j<3; j++){
         cont++;
-        btButaca1[i][j].setToolTipText("N."+cont);
+        btButaca1[i][j].setToolTipText("N.B1-"+cont);
         btButaca1[i][j].setText((cont < 10 ? "0" : "") + cont++);
 }}
-cont = 21;
+cont = 41;
 for(int i=0; i<7; i++){
     for(int j=0; j<3; j++){
         cont++;
-        btButaca2[i][j].setToolTipText("N."+cont);
+        btButaca2[i][j].setToolTipText("N.B2-"+cont);
         btButaca2[i][j].setText((cont < 10 ? "0" : "") + cont++);
  }}
 int xe1 = 215;
@@ -124,70 +124,50 @@ return pnl;
 
 private JPanel pnlInformacion(){
 
-jl6 = new JLabel("Nombre");
-jl8 = new JLabel("Asiento");
-jl9 = new JLabel("Columna");
-jl10 = new JLabel("Fila");
-jl12 = new JLabel("Estado");
+jl6 = new JLabel("Hora Actual");
+jl8 = new JLabel("Asiento(s)");
+
 
 txf6 = new JTextField();
 txf7 = new JTextField();
-txf9 = new JTextField();
-txf10 = new JTextField();
-txf12 = new JTextField();
+
 
 jl6.setForeground(Color.white);
 jl8.setForeground(Color.white);
-jl9.setForeground(Color.white);
-jl10.setForeground(Color.white);
-jl12.setForeground(Color.white);
 
-txf6.setEditable(false);
-txf7.setEditable(false);
-txf9.setEditable(false);
-txf10.setEditable(false);
-txf12.setEditable(false);
+
+txf6.setEditable(true);
+txf7.setEditable(true);
+
 
 txf6.setBackground(Color.white);
 txf7.setBackground(Color.white);
-txf9.setBackground(Color.white);
-txf10.setBackground(Color.white);
-txf12.setBackground(Color.white);
+
 
 txf6.setForeground(Color.blue);
 txf7.setForeground(Color.blue);
-txf9.setForeground(Color.blue);
-txf10.setForeground(Color.blue);
-txf12.setForeground(Color.blue);
+
 
 jl6.setFont(fuente);
 jl8.setFont(fuente);
-jl9.setFont(fuente);
-jl10.setFont(fuente);
-jl12.setFont(fuente);
+
 
 txf6.setFont(fuente);
 txf7.setFont(fuente);
-txf9.setFont(fuente);
-txf10.setFont(fuente);
-txf12.setFont(fuente);
+
 
 int y = 20;
 int inc = 65;
 
 jl6.setBounds(15,y,100,30);
 jl8.setBounds(15,y+=inc,100,30);
-jl9.setBounds(15,y+=inc,100,30);
-jl10.setBounds(15,y+=inc,100,30);
-jl12.setBounds(15,y+=inc,100,30);
+
 
 y = 50;
 
 txf6.setBounds(15,y,150,30);
 txf7.setBounds(15,y+=inc,150,30);
-txf9.setBounds(15,y+=inc,100,30);
-txf10.setBounds(15,y+=inc,100,30);
-txf12.setBounds(15,y+=inc,100,30);
+
 
 JPanel pnl = new JPanel();
 pnl.setBorder(BorderFactory.createTitledBorder(BorderFactory.createLineBorder(Color.white), "Informacion",1,0,fuente,Color.white));
@@ -198,80 +178,75 @@ pnl.setBackground(new Color(0,64,128));
 
 pnl.add(jl6);
 pnl.add(jl8);
-pnl.add(jl9);
-pnl.add(jl10);
-pnl.add(jl12);
+
 pnl.add(txf6);
 pnl.add(txf7);
-pnl.add(txf9);
-pnl.add(txf10);
-pnl.add(txf12);
+
 
         return pnl;
     }
 
 private JDialog dialogo(int j, int i, String asiento){
 
-jl1 = new JLabel("Nombre");
+
 jl3 = new JLabel("Columna");
 jl4 = new JLabel("Fila");
 jl5 = new JLabel("Asiento");
 
-txf1 = new JTextField();
+
 txf3 = new JTextField();
 txf4 = new JTextField();
 txf5 = new JTextField();
 
-bt1 = new JButton("Registrar asiento(s)");
-bt2 = new JButton("Cancelar");
 
-txf1.setEditable(false);
+bt2 = new JButton("Devolver");
+
+
 txf3.setEditable(false);
 txf4.setEditable(false);
 txf5.setEditable(false);
 
-txf1.setBackground(Color.white);
+
 txf3.setBackground(Color.white);
 txf4.setBackground(Color.white);
 txf5.setBackground(Color.white);
 
-// txf1.setText(usuarios);
+
 txf3.setText(""+i);
 txf4.setText(""+j);
 txf5.setText(asiento);
 
-jl1.setBounds(30,30,70,30);
-jl3.setBounds(30,110,70,30);
-jl4.setBounds(30,150,70,30);
-jl5.setBounds(30,190,70,30);
 
-txf1.setBounds(100,30,130,30);
+jl3.setBounds(30,40,70,30);
+jl4.setBounds(30,80,70,30);
+jl5.setBounds(30,120,70,30);
 
-txf3.setBounds(100,110,60,30);
-txf4.setBounds(100,150,60,30);
-txf5.setBounds(100,190,60,30);
 
-bt1.setBounds(5,230,160,30);
-bt2.setBounds(170,230,88,30);
 
-bt1.addActionListener(this);
+txf3.setBounds(100,40,60,25);
+txf4.setBounds(100,80,60,25);
+txf5.setBounds(100,120,60,25);
+
+bt2.setBounds(90,230,110,30);
+
+
 bt2.addActionListener(this);
 
-jl1.setFont(fuente);
+
 jl3.setFont(fuente);
 jl4.setFont(fuente);
 jl5.setFont(fuente);
 
-txf1.setFont(fuente);
+
 
 txf3.setFont(fuente);
 txf4.setFont(fuente);
 txf5.setFont(fuente);
 
-bt1.setFont(fuente);
+
 bt2.setFont(fuente);
 
-dialg = new JDialog(this,"Datos de la compra", true);
+dialg = new JDialog(this,"Datos del asiento", true);
 dialg.setLayout(null);
 dialg.setSize(270,310);
 dialg.setLocationRelativeTo(null);
@@ -279,25 +254,19 @@ dialg.addWindowListener(new WindowAdapter(){
 public void windowClosing(WindowEvent e){
 dialg.dispose();  
 }});
-dialg.add(jl1);
+
 dialg.add(jl3);
 dialg.add(jl4);
 dialg.add(jl5);
-dialg.add(txf1);
+
 dialg.add(txf3);
 dialg.add(txf4);
 dialg.add(txf5);
-dialg.add(bt1);
+
 dialg.add(bt2);
 return dialg;
 }
-private void cambiarColor(int j, int i, String asiento){
-String ast = asiento.substring(0, 5);
-  if(ast.equals("EC.B1")){
-btButaca1[i][j].setBackground(Color.red);
-}
-if(ast.equals("EC.B2")){
-}}
+
 class Raton extends MouseAdapter{
  public void mouseEntered(MouseEvent e){
      Object f = e.getSource();
@@ -307,28 +276,10 @@ if(f.equals(btButaca1[i][j])){
     if(tabla.buscar(btButaca1[i][j].getToolTipText(), 2) == true){
  txf6.setText((String)tabla.darDato(1));
  txf7.setText((String)tabla.darDato(0));
- txf9.setText("" + tabla.darDato(4));
- txf10.setText("" + tabla.darDato(3));
- txf12.setText("Ocupado");
-}else{
- txf6.setText("Butaca Disponible");
- txf7.setText("Butaca Disponible");
- txf12.setText("Desocupado");
+ 
  }
 }
-   if(f.equals(btButaca2[i][j])){
-        if(tabla.buscar(btButaca2[i][j].getToolTipText(), 2) == true){
-txf6.setText((String)tabla.darDato(1));
-txf7.setText((String)tabla.darDato(0));
-txf9.setText("" + tabla.darDato(4));
- txf10.setText("" + tabla.darDato(3));
-txf12.setText("Ocupado");
- }
-   else{
-   txf6.setText("Butaca Disponible");
-   txf7.setText("Butaca Disponible");
-  txf12.setText("Desocupado");
-}}}}}
+   }}}
  public void mouseExited(MouseEvent e){
    Object f = e.getSource();
     for(int i=0; i<7; i++){
@@ -336,16 +287,12 @@ txf12.setText("Ocupado");
      if(f.equals(btButaca1[i][j])){
 txf6.setText("");
 txf7.setText("");
-txf9.setText("");
-txf10.setText("");
-txf12.setText("");
+
  }
     if(f.equals(btButaca2[i][j])){
 txf6.setText("");
 txf7.setText("");
-txf9.setText("");
-txf10.setText("");
-txf12.setText("");
+
   }}}}}
     public void actionPerformed(ActionEvent e){
         Object f = e.getSource();
@@ -367,22 +314,10 @@ JOptionPane.showMessageDialog(this, "El asiento ya esta ocupado", "Lo sentimos",
         this.dialogo(i,j,btButaca2[i][j].getToolTipText());
         this.dialogo(i,j,btButaca2[i][j].getToolTipText()).setVisible(true);
  }}}}      
-if(f.equals(bt1)){
-     if(!txf5.getText().equals("") && !txf1.getText().equals("")){
-         Object [] reg = {txf1.getText(),txf5.getText(),
-  Integer.parseInt(txf3.getText()),Integer.parseInt(txf4.getText())};
-    tabla.add(reg);
-    txf1.setText("");
-    txf3.setText("");
-    txf4.setText("");
-    txf5.setText("");
-    dialg.dispose();
-   }else{
- JOptionPane.showMessageDialog(this, "ERROR", "ATENCION",JOptionPane.WARNING_MESSAGE);
-  } }
+
     if(f.equals(bt2)){
-     dialg.dispose();
- }
+            dialg.dispose();
+        }
   if(f.equals(bt3)){ 
 TicketsMenu2 a= new TicketsMenu2();
 a.setVisible(true);
@@ -393,8 +328,4 @@ a.setVisible(true);
   a.setVisible(true);
   this.setVisible(false);
  }
- for(int i=0; i<tabla.datosColumna(0).length; i++){            
-    this.cambiarColor((Integer)tabla.datosColumna(3)[i],
-(Integer)tabla.datosColumna(4)[i],
-(String)tabla.datosColumna(2)[i]);
- }}}
+ }}
