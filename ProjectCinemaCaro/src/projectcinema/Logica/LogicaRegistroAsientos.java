@@ -7,6 +7,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import projectcinema.Bill;
+import static projectcinema.Bill.txthora;
 import projectcinema.TicketsMenu2;
 
 public class LogicaRegistroAsientos extends JFrame implements ActionListener{
@@ -327,6 +328,7 @@ a.setVisible(true);
   Bill a= new Bill();
   a.setVisible(true);
   this.setVisible(false);
+  
   
   Bill.txtAsiento.setText(txf7.getText());
   Bill.txthora.setText(txf6.getText());
