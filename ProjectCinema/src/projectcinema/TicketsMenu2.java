@@ -26,7 +26,7 @@ public class TicketsMenu2 extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         super.setTitle("Escoge la cantidad de tickets");
         
-        lblMovieType.setText("none2 "+"");
+        lblMovieType.setText("none2 ");
     }
     
     /**
@@ -65,11 +65,7 @@ public class TicketsMenu2 extends javax.swing.JFrame {
         btnOut = new javax.swing.JButton();
         lblMovieType = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
-        jLabel12 = new javax.swing.JLabel();
-        txtMoney = new javax.swing.JTextField();
         lblFondo = new javax.swing.JLabel();
-        lbltest = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -269,7 +265,7 @@ public class TicketsMenu2 extends javax.swing.JFrame {
                 btnPayActionPerformed(evt);
             }
         });
-        getContentPane().add(btnPay, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 480, 100, 50));
+        getContentPane().add(btnPay, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 410, 100, 50));
 
         btnGoBack.setText("Volver");
         btnGoBack.addActionListener(new java.awt.event.ActionListener() {
@@ -277,7 +273,7 @@ public class TicketsMenu2 extends javax.swing.JFrame {
                 btnGoBackActionPerformed(evt);
             }
         });
-        getContentPane().add(btnGoBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 480, 100, 50));
+        getContentPane().add(btnGoBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 410, 100, 50));
 
         btnOut.setBackground(new java.awt.Color(204, 51, 0));
         btnOut.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
@@ -288,7 +284,7 @@ public class TicketsMenu2 extends javax.swing.JFrame {
                 btnOutActionPerformed(evt);
             }
         });
-        getContentPane().add(btnOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 10, 40, 40));
+        getContentPane().add(btnOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 10, 40, 40));
 
         lblMovieType.setForeground(new java.awt.Color(255, 255, 255));
         lblMovieType.setText("none");
@@ -298,45 +294,8 @@ public class TicketsMenu2 extends javax.swing.JFrame {
         jLabel11.setText("Tipo de Película:");
         getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, -1, -1));
 
-        jPanel4.setBackground(new java.awt.Color(153, 0, 0));
-        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Pago", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Lucida Grande", 0, 13), new java.awt.Color(255, 255, 255))); // NOI18N
-
-        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel12.setText("¿Con cuánto va a pagar?");
-
-        txtMoney.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtMoneyActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
-                .addComponent(txtMoney, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtMoney, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 10, Short.MAX_VALUE))
-        );
-
-        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, 300, 60));
-
         lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/LoginPics/FondoMenuTickets.jpg"))); // NOI18N
-        getContentPane().add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 530, 560));
-
-        lbltest.setText("jLabel13");
-        getContentPane().add(lbltest, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 410, -1, -1));
+        getContentPane().add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 470));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -362,17 +321,21 @@ public class TicketsMenu2 extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Introduzca un 0 si no hay niños, adultos o adultos mayores", "Error!", JOptionPane.ERROR_MESSAGE);
         } 
         
+        /*else if(txtKids.getText().trim().|| txtAdults.getText().trim().isEmpty()){
+            JOptionPane.showMessageDialog(null, "Introduzca un 0 si no hay adultos o niños", "Error!", JOptionPane.ERROR_MESSAGE);
+        }*/
+        
+        // check if txt has a letter 
         
         
         
         
-        totales = obj.Prices(this.txtKids.getText(), this.txtAdults.getText(), this.txtSeniors.getText(), this.txtMoney.getText(), this.lblMovieType.getText());
+        totales = obj.Prices(this.txtKids.getText(), this.txtAdults.getText(), this.txtSeniors.getText(), this.lblMovieType.getText());
         
         lblKidsPrice.setText("" + totales[0]);
         lblAdultsPrice.setText("" + totales[1]);
         lblSeniorsPrice.setText("" + totales [2]);
-        lblTotalPay.setText("" + totales[3]);
-        lbltest.setText("" + totales[4]);
+        lblTotalPay.setText(("" + totales[3]));
     }//GEN-LAST:event_btnPriceActionPerformed
 
     private void btnGoBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGoBackActionPerformed
@@ -391,10 +354,6 @@ public class TicketsMenu2 extends javax.swing.JFrame {
     private void txtAdultsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAdultsActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtAdultsActionPerformed
-
-    private void txtMoneyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMoneyActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtMoneyActionPerformed
 
     /**
      * @param args the command line arguments
@@ -441,7 +400,6 @@ public class TicketsMenu2 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -453,7 +411,6 @@ public class TicketsMenu2 extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JLabel lblAdultsPrice;
     private javax.swing.JLabel lblFondo;
     private javax.swing.JLabel lblKidsPrice;
@@ -461,10 +418,8 @@ public class TicketsMenu2 extends javax.swing.JFrame {
     private javax.swing.JLabel lblSeniors;
     private javax.swing.JLabel lblSeniorsPrice;
     private javax.swing.JLabel lblTotalPay;
-    private javax.swing.JLabel lbltest;
     private javax.swing.JTextField txtAdults;
     private javax.swing.JTextField txtKids;
-    private javax.swing.JTextField txtMoney;
     private javax.swing.JTextField txtSeniors;
     // End of variables declaration//GEN-END:variables
 }

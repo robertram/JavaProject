@@ -5,7 +5,6 @@
  */
 package projectcinema;
 
-import javax.swing.JOptionPane;
 import projectcinema.Logica.LogicaFactura;
 import projectcinema.Logica.LogicaTicketsMenu;
 import projectcinema.TicketsMenu2;
@@ -26,10 +25,7 @@ public class Bill extends javax.swing.JFrame {
         
         lblKidsPrice.setText("" + totales[0]);
         lblAdultsPrice.setText("" + totales[1]);
-        lblElderly.setText(""+ totales[2]);
-        lblTotalPay.setText("" + totales[3]);
-        lblCambio.setText(""+totales[4]);
-        
+        lblTotalPay.setText(("" + totales[2]));
     }
 
     /**
@@ -59,14 +55,9 @@ public class Bill extends javax.swing.JFrame {
         lblKidsPrice = new javax.swing.JLabel();
         lblAdultsPrice = new javax.swing.JLabel();
         lblTotalPay = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        lblElderly = new javax.swing.JLabel();
         btnOut = new javax.swing.JButton();
         btnGoBack = new javax.swing.JButton();
         btnShowPrices = new javax.swing.JButton();
-        jPanel5 = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
-        lblCambio = new javax.swing.JLabel();
         lblFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -138,7 +129,7 @@ public class Bill extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 245, -1));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 245, -1));
 
         jPanel2.setBackground(new java.awt.Color(51, 0, 51));
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Información del Comprador", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Lucida Grande", 0, 14), new java.awt.Color(255, 255, 255))); // NOI18N
@@ -167,10 +158,10 @@ public class Bill extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(lblBuyersName, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(13, Short.MAX_VALUE))
+                .addContainerGap(67, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 350, 70));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 350, -1));
 
         jPanel3.setBackground(new java.awt.Color(51, 0, 51));
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Pago", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Lucida Grande", 0, 14), new java.awt.Color(255, 255, 255))); // NOI18N
@@ -190,10 +181,6 @@ public class Bill extends javax.swing.JFrame {
 
         lblTotalPay.setForeground(new java.awt.Color(255, 255, 255));
 
-        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel12.setText("Adultos Mayores:");
-        jLabel12.setToolTipText("");
-
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -202,43 +189,32 @@ public class Bill extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel12)
+                        .addComponent(jLabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(lblElderly, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(lblTotalPay, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jLabel5)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(lblTotalPay, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jLabel9)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(lblKidsPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jLabel11)
-                                .addGap(18, 18, 18)
-                                .addComponent(lblAdultsPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 8, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addComponent(jLabel9)
+                        .addGap(18, 18, 18)
+                        .addComponent(lblKidsPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel11)
+                        .addGap(18, 18, 18)
+                        .addComponent(lblAdultsPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel9)
-                    .addComponent(lblKidsPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblAdultsPrice, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel9)
+                    .addComponent(lblKidsPrice, javax.swing.GroupLayout.DEFAULT_SIZE, 22, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel12)
-                        .addGap(0, 3, Short.MAX_VALUE))
-                    .addComponent(lblElderly, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jLabel11)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(lblAdultsPrice, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5)
@@ -246,7 +222,7 @@ public class Bill extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 60, 200, 140));
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 70, 200, 120));
 
         btnOut.setBackground(new java.awt.Color(204, 51, 0));
         btnOut.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
@@ -265,7 +241,7 @@ public class Bill extends javax.swing.JFrame {
                 btnGoBackActionPerformed(evt);
             }
         });
-        getContentPane().add(btnGoBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 100, 40));
+        getContentPane().add(btnGoBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 100, 40));
 
         btnShowPrices.setText("Pagar");
         btnShowPrices.addActionListener(new java.awt.event.ActionListener() {
@@ -273,42 +249,11 @@ public class Bill extends javax.swing.JFrame {
                 btnShowPricesActionPerformed(evt);
             }
         });
-        getContentPane().add(btnShowPrices, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 310, 100, 40));
-
-        jPanel5.setBackground(new java.awt.Color(51, 0, 51));
-        jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cambio", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Lucida Grande", 0, 13), new java.awt.Color(255, 255, 255))); // NOI18N
-
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("El vuelto es de:");
-
-        lblCambio.setForeground(new java.awt.Color(255, 255, 255));
-
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblCambio, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8))
-                .addContainerGap(17, Short.MAX_VALUE))
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblCambio, javax.swing.GroupLayout.DEFAULT_SIZE, 22, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 210, 150, 80));
+        getContentPane().add(btnShowPrices, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 230, 100, 40));
 
         lblFondo.setForeground(new java.awt.Color(51, 0, 51));
         lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/LoginPics/multicolor-wallpaper.jpg"))); // NOI18N
-        getContentPane().add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 590, 440));
+        getContentPane().add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 590, 430));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -320,13 +265,12 @@ public class Bill extends javax.swing.JFrame {
     }//GEN-LAST:event_btnGoBackActionPerformed
 
     private void btnOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOutActionPerformed
-        this.dispose();
+        System.exit(0);
     }//GEN-LAST:event_btnOutActionPerformed
 
     private void btnShowPricesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnShowPricesActionPerformed
-        JOptionPane.showMessageDialog(this,"Gracias por su Compra. Vuelva Pronto!");
-        //this.dispose();
-        System.exit(0);
+        Change cha = new Change();
+        cha.setVisible(true);
     }//GEN-LAST:event_btnShowPricesActionPerformed
 
     /**
@@ -370,22 +314,17 @@ public class Bill extends javax.swing.JFrame {
     private javax.swing.JButton btnShowPrices;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel5;
     private javax.swing.JLabel lblAdultsPrice;
     private javax.swing.JLabel lblBuyersName;
-    private javax.swing.JLabel lblCambio;
-    private javax.swing.JLabel lblElderly;
     private javax.swing.JLabel lblFondo;
     private javax.swing.JLabel lblKidsPrice;
     private javax.swing.JLabel lblMoviesName;
