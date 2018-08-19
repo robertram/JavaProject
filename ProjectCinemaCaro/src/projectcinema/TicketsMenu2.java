@@ -13,6 +13,7 @@ import projectcinema.Logica.GoToWindow;
 import projectcinema.Logica.LogicaFactura;
 import projectcinema.Logica.LogicaRegistroAsientos;
 import projectcinema.Logica.LogicaTicketsMenu;
+import projectcinema.SelectMovie;
 
 /**
  *
@@ -77,7 +78,7 @@ public class TicketsMenu2 extends javax.swing.JFrame {
 
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("El precio de los tiquetes es de:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, -1, -1));
 
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Niños: 1200");
@@ -131,7 +132,7 @@ public class TicketsMenu2 extends javax.swing.JFrame {
                         .addGap(10, 10, 10)
                         .addComponent(txtSeniors, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(lblSeniors))
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -283,7 +284,7 @@ public class TicketsMenu2 extends javax.swing.JFrame {
         getContentPane().add(btnOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 10, 40, 40));
 
         lblMovieType.setText("Tipo de Pelicula");
-        getContentPane().add(lblMovieType, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 60, -1, 20));
+        getContentPane().add(lblMovieType, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, -1, 20));
 
         lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/LoginPics/FondoMenuTickets.jpg"))); // NOI18N
         getContentPane().add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 470));
@@ -319,7 +320,6 @@ public class TicketsMenu2 extends javax.swing.JFrame {
         }*/
         
         // check if txt has a letter 
-        
         
         
         
