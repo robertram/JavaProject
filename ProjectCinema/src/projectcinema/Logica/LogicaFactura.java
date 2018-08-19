@@ -6,7 +6,6 @@
 package projectcinema.Logica;
 
 import projectcinema.Bill;
-import projectcinema.Change;
 import projectcinema.Login;
 import projectcinema.SelectMovie;
 import projectcinema.TicketsMenu2;

@@ -57,7 +57,6 @@ public class Bill extends javax.swing.JFrame {
         lblTotalPay = new javax.swing.JLabel();
         btnOut = new javax.swing.JButton();
         btnGoBack = new javax.swing.JButton();
-        btnShowPrices = new javax.swing.JButton();
         lblFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -243,14 +242,6 @@ public class Bill extends javax.swing.JFrame {
         });
         getContentPane().add(btnGoBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 100, 40));
 
-        btnShowPrices.setText("Pagar");
-        btnShowPrices.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnShowPricesActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnShowPrices, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 230, 100, 40));
-
         lblFondo.setForeground(new java.awt.Color(51, 0, 51));
         lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/LoginPics/multicolor-wallpaper.jpg"))); // NOI18N
         getContentPane().add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 590, 430));
@@ -267,11 +258,6 @@ public class Bill extends javax.swing.JFrame {
     private void btnOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOutActionPerformed
         System.exit(0);
     }//GEN-LAST:event_btnOutActionPerformed
-
-    private void btnShowPricesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnShowPricesActionPerformed
-        Change cha = new Change();
-        cha.setVisible(true);
-    }//GEN-LAST:event_btnShowPricesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -311,7 +297,6 @@ public class Bill extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnGoBack;
     private javax.swing.JButton btnOut;
-    private javax.swing.JButton btnShowPrices;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
