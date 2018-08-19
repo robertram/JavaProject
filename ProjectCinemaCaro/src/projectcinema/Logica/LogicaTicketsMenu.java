@@ -20,6 +20,14 @@ public class LogicaTicketsMenu {
     String txtSeniors;
     String lblMovieType;
     
+    
+    public void Type(){
+        
+    
+    
+    
+    }
+    
     public int[] Prices(String numkids, String numadults, String numseniors, String movieType){
         
         this.txtKids = numkids;
