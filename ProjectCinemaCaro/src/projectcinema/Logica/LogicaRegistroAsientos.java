@@ -327,5 +327,8 @@ a.setVisible(true);
   Bill a= new Bill();
   a.setVisible(true);
   this.setVisible(false);
+  
+  Bill.txtAsiento.setText(txf7.getText());
+  Bill.txthora.setText(txf6.getText());
  }
  }}

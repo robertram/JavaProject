@@ -375,7 +375,7 @@ public class Bill extends javax.swing.JFrame {
     private javax.swing.JLabel lblSala;
     private javax.swing.JLabel lblTime;
     private javax.swing.JLabel lblTotalPay;
-    private javax.swing.JLabel txtAsiento;
-    private javax.swing.JLabel txthora;
+    public static javax.swing.JLabel txtAsiento;
+    public static javax.swing.JLabel txthora;
     // End of variables declaration//GEN-END:variables
 }
