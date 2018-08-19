@@ -72,7 +72,7 @@ for(int i=0; i<7; i++){
         btButaca1[i][j].setToolTipText("N."+cont);
         btButaca1[i][j].setText((cont < 10 ? "0" : "") + cont++);
 }}
-cont = 41;
+cont = 21;
 for(int i=0; i<7; i++){
     for(int j=0; j<3; j++){
         cont++;
