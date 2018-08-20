@@ -5,11 +5,16 @@ import Data.Data;
 import javax.swing.ImageIcon;
 import Data.DataSelectMovie;
 import Data.DataRoomType;
+import projectcinema.SelectMovie;
 import projectcinema.TicketsMenu2;
 
 
 public class LogicaCinema {
 
+    public String lblMoviesName;
+    
+    
+    
     Data dat= new Data();
     public String Movie(int movieIndex){
         switch (movieIndex){
@@ -52,4 +57,19 @@ public class LogicaCinema {
         return room.vip();
     }
     
+    public String MovieType(int movieIndex){
+        switch (movieIndex){
+            case 1:
+                lblMoviesName = "SpiderMan";
+                
+            case 2:
+                lblMoviesName = "IronMan";
+                
+            case 3:
+                lblMoviesName = "Batman";
+              
+        }
+        return lblMoviesName;
+    }
 }
+

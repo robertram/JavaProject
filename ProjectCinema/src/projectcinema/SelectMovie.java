@@ -16,6 +16,10 @@ import projectcinema.Logica.LogicaTicketsMenu;
  */
 public class SelectMovie extends javax.swing.JFrame {
 
+    String lblMovieType;
+    public String movie;
+    LogicaCinema cinema = new LogicaCinema();
+
     /** Creates new form SelectMovie */
     public SelectMovie() {
         initComponents();
@@ -31,6 +35,7 @@ public class SelectMovie extends javax.swing.JFrame {
     private void initComponents() {
 
         groupMovieLang = new javax.swing.ButtonGroup();
+        buttonGroupMovieType = new javax.swing.ButtonGroup();
         lblSelectMovie = new javax.swing.JLabel();
         cmbMovies = new javax.swing.JComboBox<>();
         lblSchedule = new javax.swing.JLabel();
@@ -38,9 +43,6 @@ public class SelectMovie extends javax.swing.JFrame {
         lblRoom = new javax.swing.JLabel();
         lblLocation = new javax.swing.JLabel();
         cmbLocation = new javax.swing.JComboBox<>();
-        ckbVIP = new javax.swing.JCheckBox();
-        ckb3D = new javax.swing.JCheckBox();
-        ckb2D = new javax.swing.JCheckBox();
         rbtnSub = new javax.swing.JRadioButton();
         rbtnDob = new javax.swing.JRadioButton();
         btnExitSelectMovie = new javax.swing.JButton();
@@ -53,6 +55,7 @@ public class SelectMovie extends javax.swing.JFrame {
         btn3D = new javax.swing.JRadioButton();
         btn2D = new javax.swing.JRadioButton();
         lblWallpaperMovies = new javax.swing.JLabel();
+        txtMovieT = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -110,36 +113,6 @@ public class SelectMovie extends javax.swing.JFrame {
         });
         getContentPane().add(cmbLocation, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 80, 240, -1));
 
-        ckbVIP.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 14)); // NOI18N
-        ckbVIP.setForeground(new java.awt.Color(255, 255, 255));
-        ckbVIP.setText("VIP");
-        ckbVIP.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ckbVIPActionPerformed(evt);
-            }
-        });
-        getContentPane().add(ckbVIP, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 570, 70, -1));
-
-        ckb3D.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 14)); // NOI18N
-        ckb3D.setForeground(new java.awt.Color(255, 255, 255));
-        ckb3D.setText("3D");
-        ckb3D.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ckb3DActionPerformed(evt);
-            }
-        });
-        getContentPane().add(ckb3D, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 570, -1, -1));
-
-        ckb2D.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 14)); // NOI18N
-        ckb2D.setForeground(new java.awt.Color(255, 255, 255));
-        ckb2D.setText("2D");
-        ckb2D.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ckb2DActionPerformed(evt);
-            }
-        });
-        getContentPane().add(ckb2D, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 570, -1, -1));
-
         groupMovieLang.add(rbtnSub);
         rbtnSub.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 14)); // NOI18N
         rbtnSub.setForeground(new java.awt.Color(255, 255, 255));
@@ -181,24 +154,45 @@ public class SelectMovie extends javax.swing.JFrame {
         lblRoomType.setForeground(new java.awt.Color(255, 255, 255));
         getContentPane().add(lblRoomType, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 540, 520, 40));
 
+        buttonGroupMovieType.add(btnVIP);
         btnVIP.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 14)); // NOI18N
         btnVIP.setForeground(new java.awt.Color(255, 255, 255));
         btnVIP.setText("VIP");
-        getContentPane().add(btnVIP, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 540, -1, -1));
+        btnVIP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVIPActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnVIP, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 550, -1, -1));
 
+        buttonGroupMovieType.add(btn3D);
         btn3D.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 14)); // NOI18N
         btn3D.setForeground(new java.awt.Color(255, 255, 255));
         btn3D.setText("3D");
-        getContentPane().add(btn3D, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 540, -1, -1));
+        btn3D.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn3DActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn3D, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 550, -1, -1));
 
+        buttonGroupMovieType.add(btn2D);
         btn2D.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 14)); // NOI18N
         btn2D.setForeground(new java.awt.Color(255, 255, 255));
         btn2D.setText("2D");
-        getContentPane().add(btn2D, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 540, -1, -1));
+        btn2D.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn2DActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn2D, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 550, -1, -1));
 
         lblWallpaperMovies.setIcon(new javax.swing.ImageIcon(getClass().getResource("/LoginPics/WallpaperCinema2.jpg"))); // NOI18N
         lblWallpaperMovies.setText("jLabel1");
         getContentPane().add(lblWallpaperMovies, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1921, -1));
+
+        txtMovieT.setText("jTextField1");
+        getContentPane().add(txtMovieT, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 450, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -216,6 +210,8 @@ public class SelectMovie extends javax.swing.JFrame {
     private void btnContinueSelectMovieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContinueSelectMovieActionPerformed
         TicketsMenu2 obj = new TicketsMenu2();
         obj.setVisible(true);
+        TicketsMenu2.lblMovieType.setText(lblMovieType);
+        
         //LogicaTicketsMenu log = new LogicaTicketsMenu();
         //log.back();
     }//GEN-LAST:event_btnContinueSelectMovieActionPerformed
@@ -227,40 +223,46 @@ public class SelectMovie extends javax.swing.JFrame {
         txtpSinopsis.setText(sinopsis);
         ImageIcon option = logica.Picture(cmbMovies.getSelectedIndex());
         lblMoviePic.setIcon(option);
+        movie = logica.MovieType(cmbMovies.getSelectedIndex());
+        
     }//GEN-LAST:event_cmbMoviesItemStateChanged
 
     private void cmbMoviesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbMoviesActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_cmbMoviesActionPerformed
 
     private void cmbLocationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbLocationActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cmbLocationActionPerformed
 
-    private void ckbVIPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ckbVIPActionPerformed
+    private void btnVIPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVIPActionPerformed
+        TicketsMenu2 type = new TicketsMenu2();
         LogicaCinema logica = new LogicaCinema();
         String roomType = logica.vip();
         lblRoomType.setText(roomType);
-    }//GEN-LAST:event_ckbVIPActionPerformed
+        lblMovieType= "VIP";
+        
+    }//GEN-LAST:event_btnVIPActionPerformed
 
-    private void ckb3DActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ckb3DActionPerformed
+    private void btn3DActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn3DActionPerformed
         LogicaCinema logica = new LogicaCinema();
         String roomType = logica.trdD();
         lblRoomType.setText(roomType);
-        String lblMovieType= "3D";
-    }//GEN-LAST:event_ckb3DActionPerformed
+        lblMovieType= "3D";
+    }//GEN-LAST:event_btn3DActionPerformed
 
-    private void ckb2DActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ckb2DActionPerformed
+    private void btn2DActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn2DActionPerformed
         LogicaCinema logica = new LogicaCinema();
         String roomType = logica.sndD();
         lblRoomType.setText(roomType);
-        String lblMovieType= "2D";
-    }//GEN-LAST:event_ckb2DActionPerformed
+        lblMovieType= "2D";
+    }//GEN-LAST:event_btn2DActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+        
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -298,9 +300,7 @@ public class SelectMovie extends javax.swing.JFrame {
     private javax.swing.JButton btnContinueSelectMovie;
     private javax.swing.JButton btnExitSelectMovie;
     private javax.swing.JRadioButton btnVIP;
-    private javax.swing.JCheckBox ckb2D;
-    private javax.swing.JCheckBox ckb3D;
-    private javax.swing.JCheckBox ckbVIP;
+    private javax.swing.ButtonGroup buttonGroupMovieType;
     private javax.swing.JComboBox<String> cmbLocation;
     private javax.swing.JComboBox<String> cmbMovies;
     private javax.swing.ButtonGroup groupMovieLang;
@@ -315,6 +315,7 @@ public class SelectMovie extends javax.swing.JFrame {
     private javax.swing.JLabel lblWallpaperMovies;
     private javax.swing.JRadioButton rbtnDob;
     private javax.swing.JRadioButton rbtnSub;
+    private javax.swing.JTextField txtMovieT;
     private javax.swing.JTextPane txtpSinopsis;
     // End of variables declaration//GEN-END:variables
 

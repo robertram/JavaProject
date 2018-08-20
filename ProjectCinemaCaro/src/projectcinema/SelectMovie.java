@@ -241,6 +241,7 @@ public class SelectMovie extends javax.swing.JFrame {
         lblRoomType.setText(roomType);
     }//GEN-LAST:event_btn2DActionPerformed
 
+    
     /**
      * @param args the command line arguments
      */

@@ -5,6 +5,7 @@
  */
 package projectcinema;
 
+import projectcinema.Logica.LogicaCinema;
 import projectcinema.Logica.LogicaFactura;
 import projectcinema.Logica.LogicaTicketsMenu;
 import projectcinema.TicketsMenu2;
@@ -14,19 +15,22 @@ import projectcinema.TicketsMenu2;
  * @author robertramirez
  */
 public class Bill extends javax.swing.JFrame {
-
+    LogicaCinema cinema= new LogicaCinema();
+    SelectMovie movie = new SelectMovie();
     /**
      * Creates new form Bill
      */
     public Bill(int[] totales) {
         initComponents();
         this.setLocationRelativeTo(null);
-        
-        
+  
         lblKidsPrice.setText("" + totales[0]);
         lblAdultsPrice.setText("" + totales[1]);
-        lblTotalPay.setText(("" + totales[2]));
+        lblSeniorsPrice.setText("" + totales[2]);
+        lblTotalPay.setText(("" + totales[3]));
+        lblMoviesName.setText(movie.movie);
     }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -55,6 +59,8 @@ public class Bill extends javax.swing.JFrame {
         lblKidsPrice = new javax.swing.JLabel();
         lblAdultsPrice = new javax.swing.JLabel();
         lblTotalPay = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        lblSeniorsPrice = new javax.swing.JLabel();
         btnOut = new javax.swing.JButton();
         btnGoBack = new javax.swing.JButton();
         lblFondo = new javax.swing.JLabel();
@@ -180,6 +186,11 @@ public class Bill extends javax.swing.JFrame {
 
         lblTotalPay.setForeground(new java.awt.Color(255, 255, 255));
 
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("Adultos Mayores:");
+
+        lblSeniorsPrice.setForeground(new java.awt.Color(255, 255, 255));
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -196,10 +207,14 @@ public class Bill extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(lblKidsPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel7)
+                        .addGap(18, 18, 18)
+                        .addComponent(lblSeniorsPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jLabel11)
                         .addGap(18, 18, 18)
                         .addComponent(lblAdultsPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -210,18 +225,25 @@ public class Bill extends javax.swing.JFrame {
                     .addComponent(lblKidsPrice, javax.swing.GroupLayout.DEFAULT_SIZE, 22, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel11)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(lblAdultsPrice, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel11)
+                    .addComponent(lblAdultsPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lblSeniorsPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5)
                     .addComponent(lblTotalPay, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 70, 200, 120));
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 70, 210, 160));
 
         btnOut.setBackground(new java.awt.Color(204, 51, 0));
         btnOut.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
@@ -263,6 +285,9 @@ public class Bill extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+        
+        
+        
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -304,6 +329,7 @@ public class Bill extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -312,9 +338,10 @@ public class Bill extends javax.swing.JFrame {
     private javax.swing.JLabel lblBuyersName;
     private javax.swing.JLabel lblFondo;
     private javax.swing.JLabel lblKidsPrice;
-    private javax.swing.JLabel lblMoviesName;
-    private javax.swing.JLabel lblSala;
-    private javax.swing.JLabel lblTime;
+    public static javax.swing.JLabel lblMoviesName;
+    public static javax.swing.JLabel lblSala;
+    private javax.swing.JLabel lblSeniorsPrice;
+    public static javax.swing.JLabel lblTime;
     private javax.swing.JLabel lblTotalPay;
     // End of variables declaration//GEN-END:variables
 }

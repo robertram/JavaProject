@@ -9,6 +9,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javax.swing.JOptionPane;
 import projectcinema.Logica.GoToWindow;
+import projectcinema.Logica.LogicaCinema;
 import projectcinema.Logica.LogicaFactura;
 import projectcinema.Logica.LogicaTicketsMenu;
 
@@ -17,7 +18,8 @@ import projectcinema.Logica.LogicaTicketsMenu;
  * @author robertramirez
  */
 public class TicketsMenu2 extends javax.swing.JFrame {
-
+SelectMovie sel = new SelectMovie();
+LogicaCinema cinema = new LogicaCinema();
     /**
      * Creates new form TicketsMenu2
      */
@@ -25,8 +27,7 @@ public class TicketsMenu2 extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         super.setTitle("Escoge la cantidad de tickets");
-        
-        lblMovieType.setText("none2 ");
+       
     }
     
     /**
@@ -39,9 +40,6 @@ public class TicketsMenu2 extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -63,8 +61,8 @@ public class TicketsMenu2 extends javax.swing.JFrame {
         btnPay = new javax.swing.JButton();
         btnGoBack = new javax.swing.JButton();
         btnOut = new javax.swing.JButton();
-        lblMovieType = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
+        lblMovieType = new javax.swing.JLabel();
         lblFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -75,18 +73,6 @@ public class TicketsMenu2 extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Escoja los tiquetes de su pelicula");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 300, 30));
-
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("El precio de los tiquetes es de:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, -1, -1));
-
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Niños: 1200");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, -1));
-
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Adultos: 2500");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, -1, -1));
 
         jPanel1.setBackground(new java.awt.Color(153, 0, 0));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -155,7 +141,7 @@ public class TicketsMenu2 extends javax.swing.JFrame {
                 .addContainerGap(18, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 250, 80));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 250, 80));
 
         btnPrice.setText("Ver Precio");
         btnPrice.addActionListener(new java.awt.event.ActionListener() {
@@ -163,7 +149,7 @@ public class TicketsMenu2 extends javax.swing.JFrame {
                 btnPriceActionPerformed(evt);
             }
         });
-        getContentPane().add(btnPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 180, 100, 50));
+        getContentPane().add(btnPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 160, 100, 50));
 
         jPanel2.setBackground(new java.awt.Color(153, 0, 0));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -196,14 +182,15 @@ public class TicketsMenu2 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(lblKidsPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel8)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblAdultsPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel10)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel8)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lblAdultsPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lblSeniorsPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(89, Short.MAX_VALUE))
+                .addContainerGap(107, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -287,13 +274,12 @@ public class TicketsMenu2 extends javax.swing.JFrame {
         });
         getContentPane().add(btnOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 10, 40, 40));
 
-        lblMovieType.setForeground(new java.awt.Color(255, 255, 255));
-        lblMovieType.setText("none");
-        getContentPane().add(lblMovieType, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 50, -1, 20));
-
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Tipo de Película:");
         getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, -1, -1));
+
+        lblMovieType.setForeground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(lblMovieType, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 50, 60, 20));
 
         lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/LoginPics/FondoMenuTickets.jpg"))); // NOI18N
         getContentPane().add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 470));
@@ -306,9 +292,10 @@ public class TicketsMenu2 extends javax.swing.JFrame {
     }//GEN-LAST:event_txtKidsActionPerformed
 
     private void btnPayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPayActionPerformed
-        
+
         LogicaFactura fact = new LogicaFactura();
         fact.EndTicketsMenu(this, totales);
+        Bill.lblMoviesName.setText(sel.movie);
         this.dispose();
         
     }//GEN-LAST:event_btnPayActionPerformed
@@ -401,9 +388,6 @@ public class TicketsMenu2 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -415,7 +399,7 @@ public class TicketsMenu2 extends javax.swing.JFrame {
     private javax.swing.JLabel lblAdultsPrice;
     private javax.swing.JLabel lblFondo;
     private javax.swing.JLabel lblKidsPrice;
-    private javax.swing.JLabel lblMovieType;
+    public static javax.swing.JLabel lblMovieType;
     private javax.swing.JLabel lblSeniors;
     private javax.swing.JLabel lblSeniorsPrice;
     private javax.swing.JLabel lblTotalPay;
