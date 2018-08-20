@@ -325,12 +325,12 @@ a.setVisible(true);
  this.setVisible(false);
 }
  if(f.equals(bt4)){ 
-  Bill a= new Bill();
-  a.setVisible(true);
-  this.setVisible(false);
+  Bill bill= new Bill();
+  bill.setVisible(true);
   
-   Bill.txtAsiento.setText(txf7.getText());
-  Bill.txthora.setText(txf6.getText());
+  
+   /*Bill.txtAsiento.setText(txf7.getText());
+  Bill.txthora.setText(txf6.getText());*/
  
  }
  }}

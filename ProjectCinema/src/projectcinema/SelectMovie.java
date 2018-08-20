@@ -222,8 +222,8 @@ public class SelectMovie extends javax.swing.JFrame {
         String sinopsis = logica.Movie(cmbMovies.getSelectedIndex());
         txtpSinopsis.setText(sinopsis);
         ImageIcon option = logica.Picture(cmbMovies.getSelectedIndex());
-        lblMoviePic.setIcon(option);
-        movie = logica.MovieType(cmbMovies.getSelectedIndex());
+        lblMoviePic.setIcon(option); 
+       
         
     }//GEN-LAST:event_cmbMoviesItemStateChanged
 

@@ -28,7 +28,7 @@ public class LogicaLogin {
         
         //String username="Bob69";
         //String password="123";
-        String filepath="/Users/robertramirez/Desktop/Users.txt";
+        String filepath="C:\\Users\\Sofi\\Documents\\GitHub\\JavaProject\\ProjectCinema\\Users.txt";
         
         VerifyLogin(username, password, filepath);
         
