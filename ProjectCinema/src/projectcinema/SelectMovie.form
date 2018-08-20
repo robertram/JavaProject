@@ -8,6 +8,8 @@
     </Component>
     <Component class="javax.swing.ButtonGroup" name="buttonGroupTime">
     </Component>
+    <Component class="javax.swing.ButtonGroup" name="buttonGroupLocation">
+    </Component>
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
@@ -376,6 +378,9 @@
     </Component>
     <Component class="javax.swing.JRadioButton" name="btnSanP">
       <Properties>
+        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+          <ComponentRef name="buttonGroupLocation"/>
+        </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Hobo Std" size="14" style="0"/>
         </Property>
@@ -395,6 +400,9 @@
     </Component>
     <Component class="javax.swing.JRadioButton" name="btnPMayor">
       <Properties>
+        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+          <ComponentRef name="buttonGroupLocation"/>
+        </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Hobo Std" size="14" style="0"/>
         </Property>
@@ -414,6 +422,9 @@
     </Component>
     <Component class="javax.swing.JRadioButton" name="btnMEscazu">
       <Properties>
+        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+          <ComponentRef name="buttonGroupLocation"/>
+        </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Hobo Std" size="14" style="0"/>
         </Property>
@@ -433,6 +444,9 @@
     </Component>
     <Component class="javax.swing.JRadioButton" name="btnPFlores">
       <Properties>
+        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+          <ComponentRef name="buttonGroupLocation"/>
+        </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Hobo Std" size="14" style="0"/>
         </Property>

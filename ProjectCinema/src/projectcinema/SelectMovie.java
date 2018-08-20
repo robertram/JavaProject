@@ -41,6 +41,7 @@ public class SelectMovie extends javax.swing.JFrame {
         groupMovieLang = new javax.swing.ButtonGroup();
         buttonGroupMovieType = new javax.swing.ButtonGroup();
         buttonGroupTime = new javax.swing.ButtonGroup();
+        buttonGroupLocation = new javax.swing.ButtonGroup();
         lblSelectMovie = new javax.swing.JLabel();
         cmbMovies = new javax.swing.JComboBox<>();
         lblSchedule = new javax.swing.JLabel();
@@ -223,6 +224,7 @@ public class SelectMovie extends javax.swing.JFrame {
         });
         getContentPane().add(btnNight, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 420, -1, -1));
 
+        buttonGroupLocation.add(btnSanP);
         btnSanP.setFont(new java.awt.Font("Hobo Std", 0, 14)); // NOI18N
         btnSanP.setForeground(new java.awt.Color(255, 255, 255));
         btnSanP.setText("San Pedro");
@@ -233,6 +235,7 @@ public class SelectMovie extends javax.swing.JFrame {
         });
         getContentPane().add(btnSanP, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 80, -1, -1));
 
+        buttonGroupLocation.add(btnPMayor);
         btnPMayor.setFont(new java.awt.Font("Hobo Std", 0, 14)); // NOI18N
         btnPMayor.setForeground(new java.awt.Color(255, 255, 255));
         btnPMayor.setText("Plaza Mayor");
@@ -243,6 +246,7 @@ public class SelectMovie extends javax.swing.JFrame {
         });
         getContentPane().add(btnPMayor, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 80, -1, -1));
 
+        buttonGroupLocation.add(btnMEscazu);
         btnMEscazu.setFont(new java.awt.Font("Hobo Std", 0, 14)); // NOI18N
         btnMEscazu.setForeground(new java.awt.Color(255, 255, 255));
         btnMEscazu.setText("Multiplaza Escazu");
@@ -253,6 +257,7 @@ public class SelectMovie extends javax.swing.JFrame {
         });
         getContentPane().add(btnMEscazu, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 130, -1, -1));
 
+        buttonGroupLocation.add(btnPFlores);
         btnPFlores.setFont(new java.awt.Font("Hobo Std", 0, 14)); // NOI18N
         btnPFlores.setForeground(new java.awt.Color(255, 255, 255));
         btnPFlores.setText("Paseo de las Flores");
@@ -423,6 +428,7 @@ public class SelectMovie extends javax.swing.JFrame {
     private javax.swing.JRadioButton btnPMayor;
     private javax.swing.JRadioButton btnSanP;
     private javax.swing.JRadioButton btnVIP;
+    private javax.swing.ButtonGroup buttonGroupLocation;
     private javax.swing.ButtonGroup buttonGroupMovieType;
     private javax.swing.ButtonGroup buttonGroupTime;
     private javax.swing.JComboBox<String> cmbMovies;
