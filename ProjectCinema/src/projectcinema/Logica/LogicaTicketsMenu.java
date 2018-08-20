@@ -42,7 +42,7 @@ public class LogicaTicketsMenu {
         } else if (movieType.compareTo("3D") == 0) {
             kidsPrice=kids*2100;
             adultsPrice=adults*3500;
-            seniorsPrice = seniors*2100;        
+            seniorsPrice = seniors*2100; 
         } else {
             kidsPrice=kids*4700;
             adultsPrice=adults*6500;
