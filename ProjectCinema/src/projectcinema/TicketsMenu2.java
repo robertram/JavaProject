@@ -26,7 +26,6 @@ LogicaCinema cinema = new LogicaCinema();
     public TicketsMenu2() {
         initComponents();
         this.setLocationRelativeTo(null);
-        super.setTitle("Escoge la cantidad de tickets");
        
     }
     
