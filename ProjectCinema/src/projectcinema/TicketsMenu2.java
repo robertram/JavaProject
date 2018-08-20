@@ -20,6 +20,9 @@ import projectcinema.Logica.LogicaTicketsMenu;
 public class TicketsMenu2 extends javax.swing.JFrame {
 SelectMovie sel = new SelectMovie();
 LogicaCinema cinema = new LogicaCinema();
+String Movie = sel.MovieName;
+String MovieLang = sel.MovieLang;
+
     /**
      * Creates new form TicketsMenu2
      */
@@ -63,6 +66,10 @@ LogicaCinema cinema = new LogicaCinema();
         jLabel11 = new javax.swing.JLabel();
         lblMovieType = new javax.swing.JLabel();
         lblFondo = new javax.swing.JLabel();
+        lbltestLang = new javax.swing.JLabel();
+        lblTime1 = new javax.swing.JLabel();
+        lblLocation = new javax.swing.JLabel();
+        lblUserBill = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -283,6 +290,14 @@ LogicaCinema cinema = new LogicaCinema();
         lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/LoginPics/FondoMenuTickets.jpg"))); // NOI18N
         getContentPane().add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 470));
 
+        lbltestLang.setForeground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(lbltestLang, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 74, 100, 30));
+        getContentPane().add(lblTime1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, 100, 20));
+        getContentPane().add(lblLocation, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 120, 90, 20));
+
+        lblUserBill.setText("jLabel2");
+        getContentPane().add(lblUserBill, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 60, -1, -1));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -291,11 +306,17 @@ LogicaCinema cinema = new LogicaCinema();
     }//GEN-LAST:event_txtKidsActionPerformed
 
     private void btnPayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPayActionPerformed
-
+        String Text = lbltestLang.getText();
+        String Time = lblTime1.getText();
+        String Type = lblMovieType.getText();
+        String Loc = lblLocation.getText();
         LogicaFactura fact = new LogicaFactura();
         fact.EndTicketsMenu(this, totales);
-        Bill.lblMoviesName.setText(sel.movie);
-        this.dispose();
+        Bill.lblMovieLang.setText(Text);
+        Bill.lblTime.setText(Time);
+        Bill.lblSala.setText(Type);
+        Bill.lblLocation2.setText(Loc);
+
         
     }//GEN-LAST:event_btnPayActionPerformed
 
@@ -398,10 +419,14 @@ LogicaCinema cinema = new LogicaCinema();
     private javax.swing.JLabel lblAdultsPrice;
     private javax.swing.JLabel lblFondo;
     private javax.swing.JLabel lblKidsPrice;
+    public static javax.swing.JLabel lblLocation;
     public static javax.swing.JLabel lblMovieType;
     private javax.swing.JLabel lblSeniors;
     private javax.swing.JLabel lblSeniorsPrice;
+    public static javax.swing.JLabel lblTime1;
     private javax.swing.JLabel lblTotalPay;
+    public static javax.swing.JLabel lblUserBill;
+    public static javax.swing.JLabel lbltestLang;
     private javax.swing.JTextField txtAdults;
     private javax.swing.JTextField txtKids;
     private javax.swing.JTextField txtSeniors;
