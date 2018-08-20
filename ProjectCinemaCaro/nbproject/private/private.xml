@@ -2,6 +2,20 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/Caoba/Documents/ProGit/JavaProject/ProjectCinemaCaro/src/projectcinema/Logica/LogicaLogin.java</file>
+            <file>file:/C:/Users/Caoba/Documents/ProGit/JavaProject/ProjectCinemaCaro/src/projectcinema/Bill.java</file>
+            <file>file:/C:/Users/Caoba/Documents/ProGit/JavaProject/ProjectCinemaCaro/src/projectcinema/Logica/LogicaInformacionTablaButacas.java</file>
+            <file>file:/C:/Users/Caoba/Documents/ProGit/JavaProject/ProjectCinemaCaro/src/projectcinema/Logica/LogicaMainButacas.java</file>
+            <file>file:/C:/Users/Caoba/Documents/ProGit/JavaProject/ProjectCinemaCaro/src/projectcinema/Logica/LogicaFactura.java</file>
+            <file>file:/C:/Users/Caoba/Documents/ProGit/JavaProject/ProjectCinemaCaro/src/projectcinema/Logica/LogicaFondoButacas.java</file>
+            <file>file:/C:/Users/Caoba/Documents/ProGit/JavaProject/ProjectCinemaCaro/src/projectcinema/SelectMovie.java</file>
+            <file>file:/C:/Users/Caoba/Documents/ProGit/JavaProject/ProjectCinemaCaro/src/projectcinema/Change.java</file>
+            <file>file:/C:/Users/Caoba/Documents/ProGit/JavaProject/ProjectCinemaCaro/src/projectcinema/Login.java</file>
+            <file>file:/C:/Users/Caoba/Documents/ProGit/JavaProject/ProjectCinemaCaro/src/projectcinema/Logica/LogicaRegistroAsientos.java</file>
+            <file>file:/C:/Users/Caoba/Documents/ProGit/JavaProject/ProjectCinemaCaro/src/projectcinema/TicketsMenu2.java</file>
+            <file>file:/C:/Users/Caoba/Documents/ProGit/JavaProject/ProjectCinemaCaro/src/projectcinema/Logica/LogicaTicketsMenu.java</file>
+            <file>file:/C:/Users/Caoba/Documents/ProGit/JavaProject/ProjectCinemaCaro/src/projectcinema/Logica/LogicaCinema.java</file>
+        </group>
     </open-files>
 </project-private>
