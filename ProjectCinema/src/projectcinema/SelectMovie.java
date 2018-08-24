@@ -7,6 +7,7 @@
 package projectcinema;
 
 import javax.swing.ImageIcon;
+import javax.swing.JComboBox;
 import projectcinema.Logica.LogicaCinema;
 import projectcinema.Logica.LogicaTicketsMenu;
 
@@ -15,9 +16,12 @@ import projectcinema.Logica.LogicaTicketsMenu;
  * @author Sofi
  */
 public class SelectMovie extends javax.swing.JFrame {
-
+    
     String lblMovieType;
-    public String movie;
+    String MovieLang;
+    String MovieTime;
+    String Location;
+    public String MovieName;
     LogicaCinema cinema = new LogicaCinema();
 
     /** Creates new form SelectMovie */
@@ -36,13 +40,13 @@ public class SelectMovie extends javax.swing.JFrame {
 
         groupMovieLang = new javax.swing.ButtonGroup();
         buttonGroupMovieType = new javax.swing.ButtonGroup();
+        buttonGroupTime = new javax.swing.ButtonGroup();
+        buttonGroupLocation = new javax.swing.ButtonGroup();
         lblSelectMovie = new javax.swing.JLabel();
         cmbMovies = new javax.swing.JComboBox<>();
         lblSchedule = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
         lblRoom = new javax.swing.JLabel();
         lblLocation = new javax.swing.JLabel();
-        cmbLocation = new javax.swing.JComboBox<>();
         rbtnSub = new javax.swing.JRadioButton();
         rbtnDob = new javax.swing.JRadioButton();
         btnExitSelectMovie = new javax.swing.JButton();
@@ -54,8 +58,16 @@ public class SelectMovie extends javax.swing.JFrame {
         btnVIP = new javax.swing.JRadioButton();
         btn3D = new javax.swing.JRadioButton();
         btn2D = new javax.swing.JRadioButton();
+        btnMoring = new javax.swing.JRadioButton();
+        btnAfternoon = new javax.swing.JRadioButton();
+        btnNight = new javax.swing.JRadioButton();
+        btnSanP = new javax.swing.JRadioButton();
+        btnPMayor = new javax.swing.JRadioButton();
+        btnMEscazu = new javax.swing.JRadioButton();
+        btnPFlores = new javax.swing.JRadioButton();
         lblWallpaperMovies = new javax.swing.JLabel();
         txtMovieT = new javax.swing.JTextField();
+        lblUserBill = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -85,15 +97,6 @@ public class SelectMovie extends javax.swing.JFrame {
         lblSchedule.setText("Seleccione el Horario");
         getContentPane().add(lblSchedule, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 360, -1, -1));
 
-        jComboBox1.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 12)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Mañana", "Tarde", "Noche" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 390, 240, -1));
-
         lblRoom.setFont(new java.awt.Font("Hobo Std", 0, 14)); // NOI18N
         lblRoom.setForeground(new java.awt.Color(255, 255, 255));
         lblRoom.setText("Seleccione la Sala");
@@ -104,25 +107,26 @@ public class SelectMovie extends javax.swing.JFrame {
         lblLocation.setText("Localidad");
         getContentPane().add(lblLocation, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 50, -1, -1));
 
-        cmbLocation.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 12)); // NOI18N
-        cmbLocation.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "San Pedro", "Multiplaza Escazu", "Plaza Mayor", "Paseo de las Flores" }));
-        cmbLocation.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmbLocationActionPerformed(evt);
-            }
-        });
-        getContentPane().add(cmbLocation, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 80, 240, -1));
-
         groupMovieLang.add(rbtnSub);
         rbtnSub.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 14)); // NOI18N
         rbtnSub.setForeground(new java.awt.Color(255, 255, 255));
         rbtnSub.setText("Subtitulada");
+        rbtnSub.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbtnSubActionPerformed(evt);
+            }
+        });
         getContentPane().add(rbtnSub, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 600, -1, -1));
 
         groupMovieLang.add(rbtnDob);
         rbtnDob.setFont(new java.awt.Font("Microsoft YaHei UI Light", 1, 14)); // NOI18N
         rbtnDob.setForeground(new java.awt.Color(255, 255, 255));
         rbtnDob.setText("Doblada");
+        rbtnDob.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbtnDobActionPerformed(evt);
+            }
+        });
         getContentPane().add(rbtnDob, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 600, -1, -1));
 
         btnExitSelectMovie.setFont(new java.awt.Font("Hobo Std", 1, 12)); // NOI18N
@@ -187,19 +191,93 @@ public class SelectMovie extends javax.swing.JFrame {
         });
         getContentPane().add(btn2D, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 550, -1, -1));
 
+        buttonGroupTime.add(btnMoring);
+        btnMoring.setFont(new java.awt.Font("Hobo Std", 0, 14)); // NOI18N
+        btnMoring.setForeground(new java.awt.Color(255, 255, 255));
+        btnMoring.setText("Mañana");
+        btnMoring.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMoringActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnMoring, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 420, -1, -1));
+
+        buttonGroupTime.add(btnAfternoon);
+        btnAfternoon.setFont(new java.awt.Font("Hobo Std", 0, 14)); // NOI18N
+        btnAfternoon.setForeground(new java.awt.Color(255, 255, 255));
+        btnAfternoon.setText("Tarde");
+        btnAfternoon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAfternoonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnAfternoon, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 420, -1, -1));
+
+        buttonGroupTime.add(btnNight);
+        btnNight.setFont(new java.awt.Font("Hobo Std", 0, 14)); // NOI18N
+        btnNight.setForeground(new java.awt.Color(255, 255, 255));
+        btnNight.setText("Noche");
+        btnNight.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNightActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnNight, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 420, -1, -1));
+
+        buttonGroupLocation.add(btnSanP);
+        btnSanP.setFont(new java.awt.Font("Hobo Std", 0, 14)); // NOI18N
+        btnSanP.setForeground(new java.awt.Color(255, 255, 255));
+        btnSanP.setText("San Pedro");
+        btnSanP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSanPActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnSanP, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 80, -1, -1));
+
+        buttonGroupLocation.add(btnPMayor);
+        btnPMayor.setFont(new java.awt.Font("Hobo Std", 0, 14)); // NOI18N
+        btnPMayor.setForeground(new java.awt.Color(255, 255, 255));
+        btnPMayor.setText("Plaza Mayor");
+        btnPMayor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPMayorActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnPMayor, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 80, -1, -1));
+
+        buttonGroupLocation.add(btnMEscazu);
+        btnMEscazu.setFont(new java.awt.Font("Hobo Std", 0, 14)); // NOI18N
+        btnMEscazu.setForeground(new java.awt.Color(255, 255, 255));
+        btnMEscazu.setText("Multiplaza Escazu");
+        btnMEscazu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMEscazuActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnMEscazu, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 130, -1, -1));
+
+        buttonGroupLocation.add(btnPFlores);
+        btnPFlores.setFont(new java.awt.Font("Hobo Std", 0, 14)); // NOI18N
+        btnPFlores.setForeground(new java.awt.Color(255, 255, 255));
+        btnPFlores.setText("Paseo de las Flores");
+        btnPFlores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPFloresActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnPFlores, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 130, -1, -1));
+
         lblWallpaperMovies.setIcon(new javax.swing.ImageIcon(getClass().getResource("/LoginPics/WallpaperCinema2.jpg"))); // NOI18N
         lblWallpaperMovies.setText("jLabel1");
         getContentPane().add(lblWallpaperMovies, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1921, -1));
 
         txtMovieT.setText("jTextField1");
         getContentPane().add(txtMovieT, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 450, -1, -1));
+        getContentPane().add(lblUserBill, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 300, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void btnExitSelectMovieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitSelectMovieActionPerformed
         Login window = new Login();
@@ -211,6 +289,14 @@ public class SelectMovie extends javax.swing.JFrame {
         TicketsMenu2 obj = new TicketsMenu2();
         obj.setVisible(true);
         TicketsMenu2.lblMovieType.setText(lblMovieType);
+        TicketsMenu2.lbltestLang.setText(MovieLang);
+        TicketsMenu2.lblTime1.setText(MovieTime);
+        TicketsMenu2.lblLocation.setText(Location);
+        
+        //Bill oj2 = new Bill();
+        //oj2.setVisible(true);
+        //Bill.lblMovieLang.setText(MovieLang);
+        
         
         //LogicaTicketsMenu log = new LogicaTicketsMenu();
         //log.back();
@@ -223,17 +309,13 @@ public class SelectMovie extends javax.swing.JFrame {
         txtpSinopsis.setText(sinopsis);
         ImageIcon option = logica.Picture(cmbMovies.getSelectedIndex());
         lblMoviePic.setIcon(option); 
-       
+           
         
     }//GEN-LAST:event_cmbMoviesItemStateChanged
 
     private void cmbMoviesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbMoviesActionPerformed
         
     }//GEN-LAST:event_cmbMoviesActionPerformed
-
-    private void cmbLocationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbLocationActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cmbLocationActionPerformed
 
     private void btnVIPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVIPActionPerformed
         TicketsMenu2 type = new TicketsMenu2();
@@ -258,6 +340,45 @@ public class SelectMovie extends javax.swing.JFrame {
         lblMovieType= "2D";
     }//GEN-LAST:event_btn2DActionPerformed
 
+    private void rbtnSubActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtnSubActionPerformed
+        
+        MovieLang = "Subtitulada";
+    }//GEN-LAST:event_rbtnSubActionPerformed
+
+    private void rbtnDobActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtnDobActionPerformed
+        MovieLang = "Doblada";
+    }//GEN-LAST:event_rbtnDobActionPerformed
+
+    private void btnMoringActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMoringActionPerformed
+        MovieTime = "Mañana";
+    }//GEN-LAST:event_btnMoringActionPerformed
+
+    private void btnAfternoonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAfternoonActionPerformed
+        MovieTime = "Tarde";
+    }//GEN-LAST:event_btnAfternoonActionPerformed
+
+    private void btnNightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNightActionPerformed
+        MovieTime = "Noche";
+    }//GEN-LAST:event_btnNightActionPerformed
+
+    private void btnSanPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSanPActionPerformed
+        Location = "San Pedro";
+    }//GEN-LAST:event_btnSanPActionPerformed
+
+    private void btnMEscazuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMEscazuActionPerformed
+        Location = "Multiplaza Escazu";
+    }//GEN-LAST:event_btnMEscazuActionPerformed
+
+    private void btnPMayorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPMayorActionPerformed
+        Location = "Plaza Mayor";
+    }//GEN-LAST:event_btnPMayorActionPerformed
+
+    private void btnPFloresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPFloresActionPerformed
+        Location = "Paseo de las Flores";
+    }//GEN-LAST:event_btnPFloresActionPerformed
+
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -297,14 +418,21 @@ public class SelectMovie extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JRadioButton btn2D;
     private javax.swing.JRadioButton btn3D;
+    private javax.swing.JRadioButton btnAfternoon;
     private javax.swing.JButton btnContinueSelectMovie;
     private javax.swing.JButton btnExitSelectMovie;
+    private javax.swing.JRadioButton btnMEscazu;
+    private javax.swing.JRadioButton btnMoring;
+    private javax.swing.JRadioButton btnNight;
+    private javax.swing.JRadioButton btnPFlores;
+    private javax.swing.JRadioButton btnPMayor;
+    private javax.swing.JRadioButton btnSanP;
     private javax.swing.JRadioButton btnVIP;
+    private javax.swing.ButtonGroup buttonGroupLocation;
     private javax.swing.ButtonGroup buttonGroupMovieType;
-    private javax.swing.JComboBox<String> cmbLocation;
+    private javax.swing.ButtonGroup buttonGroupTime;
     private javax.swing.JComboBox<String> cmbMovies;
     private javax.swing.ButtonGroup groupMovieLang;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JLabel lblLocation;
     private javax.swing.JLabel lblMoviePic;
@@ -312,6 +440,7 @@ public class SelectMovie extends javax.swing.JFrame {
     private javax.swing.JLabel lblRoomType;
     private javax.swing.JLabel lblSchedule;
     private javax.swing.JLabel lblSelectMovie;
+    public static javax.swing.JLabel lblUserBill;
     private javax.swing.JLabel lblWallpaperMovies;
     private javax.swing.JRadioButton rbtnDob;
     private javax.swing.JRadioButton rbtnSub;

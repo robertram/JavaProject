@@ -85,9 +85,7 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
-        LogicaLogin autent = new LogicaLogin();
-        
-        
+        LogicaLogin autent = new LogicaLogin();     
         autent.Autent(this.txtUsuario.getText(), this.pswPass.getText());
         
         //autent.Autentication(this.txtUsuario.getText(), this.pswPass.getText());
@@ -140,6 +138,6 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel lblUser;
     private javax.swing.JLabel lblWallpaper;
     private javax.swing.JPasswordField pswPass;
-    private javax.swing.JTextField txtUsuario;
+    public static javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
 }

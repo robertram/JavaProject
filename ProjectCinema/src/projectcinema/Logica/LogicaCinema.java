@@ -71,5 +71,7 @@ public class LogicaCinema {
         }
         return lblMoviesName;
     }
+   
+    
 }
 

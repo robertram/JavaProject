@@ -63,6 +63,7 @@ public class LogicaTicketsMenu {
     public void back(){
         SelectMovie goback = new SelectMovie();
         goback.setVisible(true);
+
         
         TicketsMenu2 quit = new TicketsMenu2();
         quit.dispose();
