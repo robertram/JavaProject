@@ -26,7 +26,7 @@ public class LogicaLogin {
         this.txtUsuario = username;
         this.pswPass = password;
         
-        String filepath="C:\\Users\\Sofi\\Documents\\GitHub\\JavaProject\\ProjectCinemaCaro\\Users.txt";
+        String filepath="";
         
         VerifyLogin(username, password, filepath);
         
